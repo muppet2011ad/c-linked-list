@@ -12,6 +12,11 @@ struct Node *newList(){
     return head;
 }
 
+struct Node *newListFromNode(struct Node *head){
+    head->next = NULL;
+    return head;
+}
+
 struct Node *getNode(struct Node *head, int n){
     struct Node *sel = head;
     for (int i = 0; i < n; i++){
