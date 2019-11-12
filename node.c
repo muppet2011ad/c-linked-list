@@ -5,6 +5,7 @@ typedef union Data{
     float f;
     char c;
     char *s;
+    struct Node *n;
 };
 
 typedef struct Node{
@@ -34,6 +35,10 @@ char *getNodeS(struct Node *node){
     return node->data.s;
 }
 
+struct Node *getNodeN(struct Node *node){
+    return node->data.n;
+}
+
 void setNodeI(struct Node *node, int i){
     node->data.i = i;
 }
@@ -48,6 +53,10 @@ void setNodeC(struct Node *node, char c){
 
 void setNodeS(struct Node *node, char *s){
     node->data.s = s;
+}
+
+void setNodeN(struct Node *node, struct Node *n){
+    node->data.n = n;
 }
 
 struct Node *newNodeI(int i){
