@@ -4,7 +4,7 @@ typedef union Data{
     int i;
     float f;
     char c;
-    char s[256];
+    char *s;
 };
 
 typedef struct Node{
@@ -34,3 +34,18 @@ char *getNodeS(struct Node *node){
     return &node->data.s;
 }
 
+void setNodeI(struct Node *node, int i){
+    node->data.i = i;
+}
+
+void setNodeF(struct Node *node, float f){
+    node->data.f = f;
+}
+
+void setNodeC(struct Node *node, char c){
+    node->data.c = c;
+}
+
+void setNodeS(struct Node *node, char *s){
+    node->data.s = s;
+}
