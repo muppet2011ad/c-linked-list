@@ -31,7 +31,7 @@ char getNodeC(struct Node *node){
 }
 
 char *getNodeS(struct Node *node){
-    return &node->data.s;
+    return node->data.s;
 }
 
 void setNodeI(struct Node *node, int i){
@@ -48,4 +48,32 @@ void setNodeC(struct Node *node, char c){
 
 void setNodeS(struct Node *node, char *s){
     node->data.s = s;
+}
+
+struct Node *newNodeI(int i){
+    struct Node *new = malloc(sizeof(struct Node));
+    new->data.i = i;
+    new->next = NULL;
+    return new;
+}
+
+struct Node *newNodeF(float f){
+    struct Node *new = malloc(sizeof(struct Node));
+    new->data.f = f;
+    new->next = NULL;
+    return new;
+}
+
+struct Node *newNodeC(char c){
+    struct Node *new = malloc(sizeof(struct Node));
+    new->data.c = c;
+    new->next = NULL;
+    return new;
+}
+
+struct Node *newNodeS(char *s){
+    struct Node *new = malloc(sizeof(struct Node));
+    new->data.s = s;
+    new->next = NULL;
+    return new;
 }
